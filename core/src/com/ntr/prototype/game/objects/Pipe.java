@@ -23,8 +23,8 @@ public class Pipe extends AbstractGameObject{
     private void init(){
         dimension.set(1 ,0.25f);        
         pipeReg = Assets.instance.decoration.pipe;      
-        position.x = -Constants.getWidth()/2;
-        dimension.x = Constants.getWidth()*5/8;  
+        position.x = Constants.LEFT_BOUND;
+        dimension.x = Constants.RIGHT_BOUND-Constants.LEFT_BOUND;  
         position.y = yPosition-dimension.y/2;
     }
 

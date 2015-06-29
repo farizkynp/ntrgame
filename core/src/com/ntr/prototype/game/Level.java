@@ -37,8 +37,8 @@ public class Level {
     }
     
     private void init(){
-        pipe = new Pipe(1.95f);
-        catcher = new Catcher(1.95f);
+        pipe = new Pipe(1.85f);
+        catcher = new Catcher(1.85f);
         tank = new Tank();
         gases = new Array<Gas>();
         back = new Background();
@@ -68,8 +68,8 @@ public class Level {
     }
     
     private void spawnGas() {
-      float bound1 = -Constants.getWidth()/2;
-      float bound2 = (Constants.getWidth()*5/8)+bound1-0.35f;
+      float bound1 = Constants.LEFT_BOUND;
+      float bound2 = Constants.RIGHT_BOUND-0.35f;
       float xPosition = MathUtils.random(bound1, bound2);                      
       Gas gas = new Gas(xPosition);
       gases.add(gas);

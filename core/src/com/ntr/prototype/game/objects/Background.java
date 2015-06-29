@@ -21,10 +21,10 @@ public class Background extends AbstractGameObject{
     public void init(){   
         backReg = Assets.instance.background.back1;    
         
-        dimension.x = Constants.getWidth()*5/8;
-        dimension.y = Constants.getHeight();
-        position.x = -Constants.getWidth()/2;
-        position.y = -Constants.getHeight()/2;
+        dimension.x = Constants.RIGHT_BOUND-Constants.LEFT_BOUND;
+        dimension.y = Constants.TOP_BOUND-Constants.BOTTOM_BOUND;
+        position.x = Constants.LEFT_BOUND;
+        position.y = Constants.BOTTOM_BOUND;
     }
 
     @Override

@@ -41,7 +41,7 @@ public class Gas extends AbstractGameObject{
             state=Constants.State.B;            
         }
         position.x = xPosition;
-        position.y = -Constants.getHeight()/2;        
+        position.y = Constants.BOTTOM_BOUND;        
         bounds.set(position.x, position.y, dimension.x, dimension.y);
     }
 

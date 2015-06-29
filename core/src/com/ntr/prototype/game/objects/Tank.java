@@ -22,9 +22,9 @@ public class Tank extends AbstractGameObject{
         dimension.set(1 ,0.25f);        
         tankReg = Assets.instance.decoration.tank;    
         
-        dimension.x = Constants.getWidth()*5/8;
-        dimension.y = Constants.getHeight()/5;
-        position.x = -Constants.getWidth()/2;
+        dimension.x = Constants.RIGHT_BOUND-Constants.LEFT_BOUND;
+        dimension.y = Constants.getHeight()/6;
+        position.x = Constants.LEFT_BOUND;
         position.y = -Constants.getHeight()/2;
     }
 
