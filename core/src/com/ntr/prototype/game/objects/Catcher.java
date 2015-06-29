@@ -22,7 +22,7 @@ public class Catcher extends AbstractGameObject {
     public Constants.State state;
 
     float bound1 = Constants.LEFT_BOUND ;
-    float bound2 = Constants.RIGHT_BOUND - 0.365f;
+    float bound2 = Constants.RIGHT_BOUND - 0.35f;
 
     public Catcher(float yPosition) {
         this.yPosition = yPosition;
