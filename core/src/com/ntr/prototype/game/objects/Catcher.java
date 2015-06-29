@@ -42,7 +42,7 @@ public class Catcher extends AbstractGameObject {
         pixmapB.dispose();
 
         position.y = yPosition - dimension.y / 2;
-        position.x = -Constants.getWidth() / 4 + dimension.x / 2;
+        position.x = -Constants.getWidth() / 4 + dimension.x / 2  + 0.15f;
         bounds.set(position.x, yPosition, dimension.x, dimension.y/5);
     }
 
