@@ -14,14 +14,11 @@ import com.badlogic.gdx.Gdx;
 public class Constants {
     //visible game world
     public static final float VIEWPORT_WIDTH = 5.0f;
-    public static final float VIEWPORT_HEIGHT = 5.0f;
-    
+    public static final float VIEWPORT_HEIGHT = 5.0f;    
     
     public static final float VIEWPORT_GUI_HEIGHT = 720.0f;
-    public static final float VIEWPORT_GUI_WIDTH = VIEWPORT_GUI_HEIGHT*16/9;
-    
-    
-    
+    public static final float VIEWPORT_GUI_WIDTH = VIEWPORT_GUI_HEIGHT*16/9;   
+        
     public static final String ATLAS_OBJECT = "ntr.pack";
     
     public enum State{
