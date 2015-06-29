@@ -21,8 +21,8 @@ public class Catcher extends AbstractGameObject {
     private TextureRegion textureRegA, textureRegB;
     public Constants.State state;
 
-    float bound1 = -Constants.getWidth() / 2;
-    float bound2 = (Constants.getWidth() * 5 / 8) + bound1 - 0.35f;
+    float bound1 = Constants.LEFT_BOUND ;
+    float bound2 = Constants.RIGHT_BOUND - 0.365f;
 
     public Catcher(float yPosition) {
         this.yPosition = yPosition;
