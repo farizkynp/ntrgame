@@ -20,7 +20,7 @@ public class Tank extends AbstractGameObject{
     
     public void init(){
         dimension.set(1 ,0.25f);        
-        tankReg = Assets.instance.decoration.tank;    
+        tankReg = Assets.instance.decoration.tank;
         
         dimension.x = Constants.RIGHT_BOUND-Constants.LEFT_BOUND;
         dimension.y = Constants.getHeight()/6;

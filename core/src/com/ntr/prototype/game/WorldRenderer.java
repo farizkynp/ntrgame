@@ -5,9 +5,7 @@
  */
 package com.ntr.prototype.game;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Disposable;
 import com.ntr.prototype.util.Constants;
@@ -42,8 +40,8 @@ public class WorldRenderer implements Disposable{
     }
     public void render(){
         
-        renderGUI(batch);
         renderLevel(batch);
+        renderGUI(batch);
     }
     public void resize(int width, int height){
         camera.viewportWidth= (Constants.VIEWPORT_HEIGHT/height)*width;
@@ -71,14 +69,47 @@ public class WorldRenderer implements Disposable{
     private void renderGUI(SpriteBatch batch){
         batch.setProjectionMatrix(cameraGUI.combined);
         batch.begin();
+        renderGUIIndicator(batch);
         renderGUIScore(batch);
         batch.end();
     }
     
     private void renderGUIScore(SpriteBatch batch){
-        float x = 20;
+        float x = 420;
         float y = 715;
-        font.draw(batch, "" + worldController.score, x, y);
+        font.draw(batch, "Score", x-30, y);
+        font.draw(batch, "" + worldController.score, x, y-20);
+    }
+    
+    private void renderGUIIndicator(SpriteBatch batch){
+        float x = 40;
+        float yYellow = 40;
+        float yBlue = 40;
+        float yGreen = 40;
+        float y = 665;
+        switch (worldController.level.catcher.state){
+            case A:
+                yYellow = 705;
+                yBlue = 665;
+                yGreen = 705;break;
+            case B:
+                yYellow = 665;
+                yBlue = 705;
+                yGreen = 705;break;
+                
+        }
+        //top border
+        batch.setColor(0, 0, 0, 1);
+        batch.draw(Assets.instance.catcher.catcher, 0, 660, 960, 100);
+        
+        //rendering indicator
+        batch.setColor(1, 1, 0, 1);
+        batch.draw(Assets.instance.catcher.catcher, x, yYellow, 80, 100);
+        batch.setColor(0, 0, 1, 1);
+        batch.draw(Assets.instance.catcher.catcher, x+80, yBlue, 80, 100);
+        batch.setColor(0, 1, 0, 1);
+        batch.draw(Assets.instance.catcher.catcher, x+160, yGreen, 80, 100);
+        batch.setColor(1, 1, 1, 1);
     }
     
 }

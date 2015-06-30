@@ -19,6 +19,7 @@ public class Catcher extends AbstractGameObject {
 
     private final float yPosition;
     private TextureRegion textureRegA, textureRegB;
+    private TextureRegion textureReg;
     public Constants.State state;
 
     float bound1 = Constants.LEFT_BOUND ;
@@ -34,12 +35,14 @@ public class Catcher extends AbstractGameObject {
         velocity.x = 0.05f;
         state = Constants.State.A;
 
-        Pixmap pixmapB = new Pixmap(32, 32, Pixmap.Format.RGBA8888);
-        pixmapB.setColor(0, 1, 0, 1);
-        pixmapB.fill();
-        textureRegA = Assets.instance.catcher.catcher;
-        textureRegB = new TextureRegion(new Texture(pixmapB));
-        pixmapB.dispose();
+//        Pixmap pixmapB = new Pixmap(32, 32, Pixmap.Format.RGBA8888);
+//        pixmapB.setColor(1, 1, 0, 1);
+//        pixmapB.fill();
+//        textureRegA = Assets.instance.catcher.catcher;
+//        textureRegB = new TextureRegion(new Texture(pixmapB));
+//        pixmapB.dispose();
+        
+        textureReg = Assets.instance.catcher.catcher;
 
         position.y = yPosition - dimension.y / 2;
         position.x = -Constants.getWidth() / 4 + dimension.x / 2  + 0.15f;
@@ -48,15 +51,15 @@ public class Catcher extends AbstractGameObject {
 
     @Override
     public void render(SpriteBatch batch) {
-        TextureRegion textureReg;
-        switch (state) {
-            case A:
-                textureReg = textureRegA;
-                break;
-            default:
-                textureReg = textureRegB;
-                break;
-        }
+//        TextureRegion textureReg;
+//        switch (state) {
+//            case A:
+//                textureReg = textureRegA;
+//                break;
+//            default:
+//                textureReg = textureRegB;
+//                break;
+//        }
 
         batch.draw(textureReg.getTexture(), position.x + origin.x, position.y + origin.y,
                 origin.x, origin.y,
